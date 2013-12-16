@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET4.0", ".NET4.0", "{76DD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkTest", "EF5\.NET4.0\EntityFrameworkTest\EntityFrameworkTest.csproj", "{6ED1A470-F2F4-411B-A2D9-4BDA1AAE5DC8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET4.5", ".NET4.5", "{C964323B-A95D-425C-9B2B-E698EA923782}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkTest", "EF5\.NET4.5\EntityFrameworkTest\EntityFrameworkTest.csproj", "{AEF9834C-8390-483C-A30B-051135CB4350}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +21,18 @@ Global
 		{6ED1A470-F2F4-411B-A2D9-4BDA1AAE5DC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ED1A470-F2F4-411B-A2D9-4BDA1AAE5DC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ED1A470-F2F4-411B-A2D9-4BDA1AAE5DC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEF9834C-8390-483C-A30B-051135CB4350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEF9834C-8390-483C-A30B-051135CB4350}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEF9834C-8390-483C-A30B-051135CB4350}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEF9834C-8390-483C-A30B-051135CB4350}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{76DD425F-C4BC-43D7-B131-8B2571CFA21E} = {C1345FD3-AA91-4252-ADBB-A4A1E9CD6744}
+		{C964323B-A95D-425C-9B2B-E698EA923782} = {C1345FD3-AA91-4252-ADBB-A4A1E9CD6744}
 		{6ED1A470-F2F4-411B-A2D9-4BDA1AAE5DC8} = {76DD425F-C4BC-43D7-B131-8B2571CFA21E}
+		{AEF9834C-8390-483C-A30B-051135CB4350} = {C964323B-A95D-425C-9B2B-E698EA923782}
 	EndGlobalSection
 EndGlobal
