@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Migrations;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,12 @@ namespace EntityFrameworkTest
 			string personalDirectoryPath = System.Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 			AppDomain.CurrentDomain.SetData("DataDirectory", personalDirectoryPath);
 
+#if SQLITE
+			SqliteInitializeSql();
+#else
 			MyDbContext.MyDbContextInitialize();
+#endif
+			
 
 			using (var @dbc = new MyDbContext())
 			{
@@ -35,6 +41,25 @@ namespace EntityFrameworkTest
 
 			Console.WriteLine("アプリケーションを終了します");
 			Console.ReadLine();
+		}
+
+		static void SqliteInitializeSql()
+		{
+			string sqltext = "";
+			System.Reflection.Assembly assm = System.Reflection.Assembly.GetExecutingAssembly();
+			using (var stream = assm.GetManifestResourceStream("EntityFrameworkTest.initialize_sqlite.txt"))
+			{
+				using (StreamReader reader = new StreamReader(stream))
+				{
+					sqltext = reader.ReadToEnd();
+				}
+			}
+
+			using (var @dbc = new MyDbContext())
+			{
+				@dbc.Database.ExecuteSqlCommand(sqltext);
+				@dbc.SaveChanges();
+			}
 		}
 	}
 

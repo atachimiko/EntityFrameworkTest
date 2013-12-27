@@ -1,0 +1,12 @@
+﻿-- テーブルのデータとAUTO_INCREMENTの値を削除
+DELETE FROM [Person];
+delete from sqlite_sequence where name='Person';
+
+VACUUM;
+
+CREATE TABLE IF NOT	EXISTS [Person]
+(
+	[PersonId] INTEGER PRIMARY KEY AUTOINCREMENT,
+	[Name] TEXT,
+	[Age] INTEGER
+);
