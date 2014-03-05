@@ -1,8 +1,5 @@
 ﻿-- テーブルのデータとAUTO_INCREMENTの値を削除
-DELETE FROM [Person];
-delete from sqlite_sequence where name='Person';
-
-VACUUM;
+DROP TABLE IF EXISTS [Person];
 
 CREATE TABLE IF NOT	EXISTS [Person]
 (
